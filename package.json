@@ -1,0 +1,29 @@
+{
+  "name": "cmd-line-app-1",
+  "version": "0.1.0",
+  "description": "Cmd Line Calculator",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dmitrydwhite/cmd-line-app-1.git"
+  },
+  "keywords": [
+    "Calculator"
+  ],
+  "author": "Dmitry White",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dmitrydwhite/cmd-line-app-1/issues"
+  },
+  "homepage": "https://github.com/dmitrydwhite/cmd-line-app-1",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "commander": "^2.2.0"
+  },
+  "devDependencies": {}
+}
