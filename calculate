@@ -10,21 +10,29 @@ var _ = require('./index');
 program
   .version('0.0.1')
   .option('-a, --add', 'add')
+  .option('-l, --list <items>', 'A list', list)
   .option('-s, --subtract', 'subtract')
+  .option('-m, --multiply', 'multiply')
   .option('-P, --pineapple', 'Add pineapple')
   .option('-b, --bbq', 'Add bbq sauce')
   .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
   .parse(process.argv);
 
-console.log('you have entered the following calculation:');
+console.log('You have entered the following instruction:');
 if (program.add) {
-  console.log('  - Add', program.args);
-  console.log('=' + _.add(program.args));
+  console.log('  : Add', program.args);
+  console.log('   = ' + _.add(program.args));
 }
-if (program.subtract) console.log(' - Subtract', program.args);
-if (program.pineapple) console.log('  - pineapple');
+if (program.subtract) {
+  console.log('  : Subtract', program.args);
+  console.log('   = ' + _.subtract(program.args));
+}
+if (program.multiply) {
+  console.log('  : Multiply', program.args);
+  console.log('   = ' + _.multifly(program.args));
+}
 if (program.bbq) console.log('  - bbq');
-//console.log('  - %s cheese', program.cheese);
+// console.log('  - %s cheese', program.cheese);
 
 function range(val) {
   return val.split('..').map(Number);
