@@ -11,7 +11,7 @@ module.exports.add = function(inputArray) {
 module.exports.subtract = function(inputArray) {
 	var diff = inputArray[0] - inputArray[1];
 	if (inputArray[2] !== undefined) {
-		diff = 'This program can only subtract one number from another' +
+		diff = 'This program can only subtract one number from another ' +
 		'and will subtract the second from the first.';
 	}
 	return diff;
@@ -25,6 +25,26 @@ module.exports.multifly = function(inputArray) {
 	return newProd;
 };
 
+module.exports.divide = function(inputArray) {
+	var divdnd = inputArray[0] / inputArray[1];
+	if (inputArray[2] !== undefined) {
+		divdnd = 'This program can only divide two numbers ' +
+		'and will divide the first number entered by the second.';
+	}
+	return divdnd;
+};
+
+module.exports.pert = function(inputArray) {
+	var intRate = parseFloat(inputArray[1]) * .01;
+	var totalAmount = parseFloat(inputArray[0]) *
+		(Math.pow(Math.E, (intRate * parseFloat(inputArray[2]))));
+	if (inputArray[3] !== undefined) {
+		totalAmount = 'To calculate continously compounding interest, enter ' +
+			'the principal in dollars, the interest rate in percent, and the ' +
+			'time in years.';
+	}
+	return totalAmount;
+};
 
 
 // module.exports.checkOperator = function(oprtr) {

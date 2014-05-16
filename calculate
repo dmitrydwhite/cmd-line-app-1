@@ -10,11 +10,10 @@ var _ = require('./index');
 program
   .version('0.0.1')
   .option('-a, --add', 'add')
-  .option('-l, --list <items>', 'A list', list)
-  .option('-s, --subtract', 'subtract')
-  .option('-m, --multiply', 'multiply')
-  .option('-P, --pineapple', 'Add pineapple')
-  .option('-b, --bbq', 'Add bbq sauce')
+  .option('-s, --subtract', 'Subtract the second number entered from the first.')
+  .option('-m, --multiply', 'Multiply all numbers entered.')
+  .option('-d, --divide', 'Divide the first number entered by the second.')
+  .option('-p, --pert', 'Use the P * e^rt formula to calculate continually compounding interest.')
   .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
   .parse(process.argv);
 
@@ -31,7 +30,14 @@ if (program.multiply) {
   console.log('  : Multiply', program.args);
   console.log('   = ' + _.multifly(program.args));
 }
-if (program.bbq) console.log('  - bbq');
+if (program.divide) {
+  console.log('  : Divide', program.args);
+  console.log('   = ' + _.divide(program.args));
+}
+if (program.pert) {
+  console.log('  : Calculate Interest of', program.args);
+  console.log('   = ' + _.pert(program.args));
+}
 // console.log('  - %s cheese', program.cheese);
 
 function range(val) {
